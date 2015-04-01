@@ -1,0 +1,11 @@
+{
+  "name": "dobble",
+  "version": "0.0.1",
+  "description": "Dobble",
+  "scripts": { "test": "mocha --compilers js:babel/register" },
+
+  "devDependencies": {
+    "babel": "^4.7.16",
+    "debug": "^2.1.3"
+  }
+}
