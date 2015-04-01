@@ -3,6 +3,28 @@ var Card = require("../lib/card");
 var Pair = require("../lib/pair");
 
 describe('Pair', function(){
+  it('should throw an error when instanciated with no arguments', function(){
+    assert.throws(f => {
+      new Pair();
+    },
+    /Pair must be instantiated with two instances of Card/);
+  });
+
+  it('should throw an error when instanciated with only one argument', function(){
+    assert.throws(f => {
+      new Pair(new Card(1,2));
+    },
+    /Pair must be instantiated with two instances of Card/);
+  });
+
+  it('should throw an error when instanciated with non Card arguments', function(){
+    assert.throws(f => {
+      new Pair(1, 2);
+    },
+    /Pair must be instantiated with two instances of Card/);
+  });
+
+
   describe('#validate()', function(){
 
     it('should return false when any card is not valid', function(){
