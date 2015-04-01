@@ -26,21 +26,21 @@ describe('Pair', () => {
       assert.ok(!pair.isValid());
     });
 
-    it('should return true when cards contains only one identical symbol', () => {
+    it('should return true when cards have only one identical symbol', () => {
       var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
       var card2 = new Card(["Z", "J", "K", "L", "M", "N", "O", "P", "A"]);
       var pair = new Pair(card1, card2);
       assert.ok(pair.isValid());
     });
 
-    it('should return false when cards contains more than one identical symbol', () => {
+    it('should return false when cards have more than one identical symbol', () => {
       var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
       var card2 = new Card(["A", "B", "K", "L", "M", "N", "O", "P", "Q"]);
       var pair = new Pair(card1, card2);
       assert.ok(!pair.isValid());
     });
 
-    it('should return false when cards does not contains any identical symbol', () => {
+    it('should return false when cards do not have any identical symbol', () => {
       var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
       var card2 = new Card(["J", "K", "L", "M", "N", "O", "P", "Q", "R"]);
       var pair = new Pair(card1, card2);
