@@ -1,5 +1,5 @@
-.PHONY: all test clean
-	
+.PHONY: test
+
 install:
 	npm install
 
