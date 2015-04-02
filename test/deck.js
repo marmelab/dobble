@@ -71,4 +71,28 @@ describe('Deck', function() {
 
   });
 
+  describe('generate()', function() {
+
+    it('should return a deck with valid cards and pairs when called with 2', function() {
+      var deck = Deck.generate(2);
+
+      assert.ok(deck.isValid());
+    });
+
+    it('should return a deck with valid cards and pairs when called with 4', function() {
+      var deck = Deck.generate(4);
+
+      assert.ok(deck.isValid());
+    });
+
+    /*
+    it('should return a deck with valid cards and pairs when called with 4', function() {
+      var deck = Deck.generate(4);
+
+      assert.ok(deck.isValid());
+    });
+    */
+
+  });
+
 });
