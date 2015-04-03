@@ -79,19 +79,47 @@ describe('Deck', function() {
       assert.ok(deck.isValid());
     });
 
+    it('should return a deck with valid cards and pairs when called with 3', function() {
+      var deck = Deck.generate(3);
+
+      assert.ok(deck.isValid());
+    });
+
     it('should return a deck with valid cards and pairs when called with 4', function() {
       var deck = Deck.generate(4);
 
       assert.ok(deck.isValid());
     });
 
-    /*
-    it('should return a deck with valid cards and pairs when called with 4', function() {
-      var deck = Deck.generate(4);
+    it('should return a deck with valid cards and pairs when called with 5', function() {
+      var deck = Deck.generate(5);
 
       assert.ok(deck.isValid());
     });
-    */
+
+    it('should return a deck with valid cards and pairs when called with 6', function() {
+      var deck = Deck.generate(6);
+
+      assert.ok(deck.isValid());
+    });
+
+    it('should return a deck with valid cards and pairs when called with 7', function() {
+      var deck = Deck.generate(7);
+
+      assert.ok(deck.isValid());
+    });
+
+    it('should return a deck with valid cards and pairs when called with 8', function() {
+      var deck = Deck.generate(8);
+
+      assert.ok(deck.isValid());
+    });
+
+    it('should return a deck with valid cards and pairs when called with 9', function() {
+      var deck = Deck.generate(9);
+
+      assert.ok(deck.isValid());
+    });
 
   });
 
