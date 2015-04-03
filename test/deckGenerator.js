@@ -26,7 +26,7 @@ describe('deckGenerator()', () => {
   });
 
   describe('deckGenerator()()', () => {
-    let tests = [/*{
+    let tests = [{
       dimensions: 2,
       expectedCards: 3,
       expectedSymbols: 3
@@ -38,23 +38,23 @@ describe('deckGenerator()', () => {
       dimensions: 4,
       expectedCards: 13,
       expectedSymbols: 13
-    }, */{
+    }, {
       dimensions: 5,
       expectedCards: 21,
       expectedSymbols: 21
-    }, /*{
+    }, {
       dimensions: 6,
       expectedCards: 31,
       expectedSymbols: 31
-    }, */{
+    }, {
       dimensions: 7,
       expectedCards: 43,
       expectedSymbols: 43
-    }, /*{
+    }, {
       dimensions: 8,
       expectedCards: 57,
       expectedSymbols: 57
-    }, */{
+    }, {
       dimensions: 9,
       expectedCards: 73,
       expectedSymbols: 73
@@ -67,7 +67,6 @@ describe('deckGenerator()', () => {
 
         debug(`${deck}`);
 
-        assert.ok(deck.isValid());
         let cards = deck.cards;
 
         assert.equal(test.expectedCards, cards.length, `Expected ${test.expectedCards} cards, found ${cards.length}`);
@@ -77,6 +76,7 @@ describe('deckGenerator()', () => {
         });
 
         assert.equal(0, invalidCards.length, `Found ${invalidCards.length} invalid cards\n${invalidCards.join('\n')}`);
+        assert.ok(deck.isValid(), "Deck is invalid");
       });
     });
   });
