@@ -61,7 +61,7 @@ describe('deckGenerator()', () => {
     }];
 
     tests.forEach(test => {
-      it(`should return a deck with cards containing ${test.expectedSymbols} when called with ${test.dimensions}`, () => {
+      it(`should return a deck with cards containing ${test.expectedSymbols} symbols when called with ${test.dimensions}`, () => {
         let generateDeck = deckGenerator();
         let deck = generateDeck(test.dimensions);
 
