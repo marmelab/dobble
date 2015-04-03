@@ -1,6 +1,6 @@
-var assert = require("assert");
-var Card = require("../lib/card");
-var Pair = require("../lib/pair");
+let assert = require("assert");
+let Card = require("../lib/card");
+let Pair = require("../lib/pair");
 
 describe('Pair', () => {
   describe('constructor()', () => {
@@ -20,30 +20,30 @@ describe('Pair', () => {
   describe('isValid()', () => {
 
     it('should return false when any card is not valid', () => {
-      var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
-      var card2 = new Card(["A", "A", "K", "L", "M", "N", "O", "P", "Q"]);
-      var pair = new Pair(card1, card2);
+      let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+      let card2 = new Card(["A", "A", "K", "L", "M", "N", "O", "P", "Q"]);
+      let pair = new Pair(card1, card2);
       assert.ok(!pair.isValid());
     });
 
     it('should return true when cards have only one identical symbol', () => {
-      var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
-      var card2 = new Card(["Z", "J", "K", "L", "M", "N", "O", "P", "A"]);
-      var pair = new Pair(card1, card2);
+      let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+      let card2 = new Card(["Z", "J", "K", "L", "M", "N", "O", "P", "A"]);
+      let pair = new Pair(card1, card2);
       assert.ok(pair.isValid());
     });
 
     it('should return false when cards have more than one identical symbol', () => {
-      var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
-      var card2 = new Card(["A", "B", "K", "L", "M", "N", "O", "P", "Q"]);
-      var pair = new Pair(card1, card2);
+      let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+      let card2 = new Card(["A", "B", "K", "L", "M", "N", "O", "P", "Q"]);
+      let pair = new Pair(card1, card2);
       assert.ok(!pair.isValid());
     });
 
     it('should return false when cards do not have any identical symbol', () => {
-      var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
-      var card2 = new Card(["J", "K", "L", "M", "N", "O", "P", "Q", "R"]);
-      var pair = new Pair(card1, card2);
+      let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+      let card2 = new Card(["J", "K", "L", "M", "N", "O", "P", "Q", "R"]);
+      let pair = new Pair(card1, card2);
       assert.ok(!pair.isValid());
     });
   });
