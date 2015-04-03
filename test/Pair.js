@@ -1,6 +1,6 @@
 let assert = require("assert");
-let Card = require("../lib/card");
-let Pair = require("../lib/pair");
+let Card = require("../lib/Card");
+let Pair = require("../lib/Pair");
 
 describe('Pair', () => {
   describe('constructor()', () => {

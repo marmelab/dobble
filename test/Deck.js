@@ -1,9 +1,9 @@
 let assert = require("assert");
-let Card = require("../lib/card");
-let Pair = require("../lib/pair");
-let Deck = require("../lib/deck");
+let Card = require("../lib/Card");
+let Pair = require("../lib/Pair");
+let Deck = require("../lib/Deck");
 
-describe('Deck', function() {
+describe('Deck', () => {
   describe('constructor()', () => {
     it('should throw an error when instanciated with no values', () => {
       assert.throws(() => new Deck());
@@ -23,14 +23,14 @@ describe('Deck', function() {
     });
   });
 
-  describe('isValid()', function() {
+  describe('isValid()', () => {
 
-    it('should return false when deck is empty', function() {
+    it('should return false when deck is empty', () => {
       let deck = new Deck([]);
       assert.ok(!deck.isValid());
     });
 
-    it('should return false when any card is invalid', function() {
+    it('should return false when any card is invalid', () => {
       let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
       let card2 = new Card(["A", "A", "K", "L", "M", "N", "O", "P", "Q"]);
       assert.ok(card1.isValid());
@@ -43,7 +43,7 @@ describe('Deck', function() {
       assert.ok(!deck.isValid());
     });
 
-    it('should return false when any possible pair is invalid', function() {
+    it('should return false when any possible pair is invalid', () => {
       let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
       let card2 = new Card(["A", "B", "L", "M", "N", "O", "P", "Q", "R"]);
       assert.ok(card1.isValid());
@@ -56,7 +56,7 @@ describe('Deck', function() {
       assert.ok(!deck.isValid());
     });
 
-    it('should return true when cards and pairs are valid', function() {
+    it('should return true when cards and pairs are valid', () => {
       let card1 = new Card(["A", "B"  , "C", "D", "E", "F", "G", "H", "I"]);
       let card2 = new Card(["A", "K", "L", "M", "N", "O", "P", "Q", "R"]);
       assert.ok(card1.isValid());
