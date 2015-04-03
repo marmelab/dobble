@@ -57,7 +57,7 @@ describe('Deck', function() {
     });
 
     it('should return true when cards and pairs are valid', function() {
-      var card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+      var card1 = new Card(["A", "B"  , "C", "D", "E", "F", "G", "H", "I"]);
       var card2 = new Card(["A", "K", "L", "M", "N", "O", "P", "Q", "R"]);
       assert.ok(card1.isValid());
       assert.ok(card2.isValid());
@@ -72,55 +72,26 @@ describe('Deck', function() {
   });
 
   describe('generate()', function() {
+    var tests = [
+      {args: [2]},
+      {args: [3]},
+      {args: [4]},
+      {args: [5]},
+      {args: [6]},
+      {args: [7]},
+      {args: [8]},
+      {args: [9]},
+      {args: [16]},
+      {args: [27]}];
 
-    it('should return a deck with valid cards and pairs when called with 2', function() {
-      var deck = Deck.generate(2);
+    tests.forEach(test => {
+      it(`should return a deck with valid cards and pairs when called with ${test.args[0]}`, function() {
+        this.timeout(0);
+        var deck = Deck.generate(test.args[0]);
 
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 3', function() {
-      var deck = Deck.generate(3);
-
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 4', function() {
-      var deck = Deck.generate(4);
-
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 5', function() {
-      var deck = Deck.generate(5);
-
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 6', function() {
-      var deck = Deck.generate(6);
-
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 7', function() {
-      var deck = Deck.generate(7);
-
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 8', function() {
-      var deck = Deck.generate(8);
-
-      assert.ok(deck.isValid());
-    });
-
-    it('should return a deck with valid cards and pairs when called with 9', function() {
-      var deck = Deck.generate(9);
-
-      assert.ok(deck.isValid());
-    });
-
+        assert.ok(deck.isValid());
+      });
+    })
   });
 
 });
