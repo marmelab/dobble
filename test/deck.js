@@ -73,21 +73,21 @@ describe('Deck', function() {
 
   describe('generate()', function() {
     var tests = [
-      {args: [2]},
-      {args: [3]},
-      {args: [4]},
-      {args: [5]},
-      {args: [6]},
-      {args: [7]},
-      {args: [8]},
-      {args: [9]},
-      {args: [16]},
-      {args: [27]}];
+      {dimensions: 2},
+      {dimensions: 3},
+      {dimensions: 4},
+      {dimensions: 5},
+      {dimensions: 6},
+      {dimensions: 7},
+      {dimensions: 8},
+      {dimensions: 9},
+      {dimensions: 16},
+      {dimensions: 27}];
 
     tests.forEach(test => {
-      it(`should return a deck with valid cards and pairs when called with ${test.args[0]}`, function() {
+      it(`should return a deck with valid cards and pairs when called with ${test.dimensions}`, function() {
         this.timeout(0);
-        var deck = Deck.generate(test.args[0]);
+        var deck = Deck.generate(test.dimensions);
 
         assert.ok(deck.isValid());
       });
