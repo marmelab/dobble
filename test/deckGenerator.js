@@ -61,7 +61,24 @@ describe('deckGenerator()', () => {
     }];
 
     tests.forEach(test => {
-      it(`should return a deck with valid cards and pairs when called with ${test.dimensions}`, () => {
+      it(`should return a deck with cards containing ${test.expectedSymbols} when called with ${test.dimensions}`, () => {
+        let generateDeck = deckGenerator();
+        let deck = generateDeck(test.dimensions);
+
+        debug(`${deck}`);
+
+        let cards = deck.cards;
+
+        let invalidCards = cards.filter(c => {
+          return c.symbols.length != test.expectedSymbols;
+        });
+
+        assert.equal(0, invalidCards.length, `Found ${invalidCards.length} invalid cards\n${invalidCards.join('\n')}`);
+      });
+    });
+
+    tests.forEach(test => {
+      it(`should return a deck with ${test.expectedCards} cards when called with ${test.dimensions}`, () => {
         let generateDeck = deckGenerator();
         let deck = generateDeck(test.dimensions);
 
@@ -70,12 +87,16 @@ describe('deckGenerator()', () => {
         let cards = deck.cards;
 
         assert.equal(test.expectedCards, cards.length, `Expected ${test.expectedCards} cards, found ${cards.length}`);
+      });
+    });
 
-        let invalidCards = cards.filter(c => {
-          return c.symbols.length != test.expectedSymbols;
-        });
+    tests.forEach(test => {
+      it(`should return a deck with valid cards and pairs when called with ${test.dimensions}`, () => {
+        let generateDeck = deckGenerator();
+        let deck = generateDeck(test.dimensions);
 
-        assert.equal(0, invalidCards.length, `Found ${invalidCards.length} invalid cards\n${invalidCards.join('\n')}`);
+        debug(`${deck}`);
+
         assert.ok(deck.isValid(), "Deck is invalid");
       });
     });
