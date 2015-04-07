@@ -28,7 +28,7 @@ describe('Pair', () => {
 
     it('should return true when cards have only one identical symbol', () => {
       let card1 = new Card(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
-      let card2 = new Card(["Z", "J", "K", "L", "M", "N", "O", "P", "A"]);
+      let card2 = new Card(["I", "J", "K", "L", "M", "N", "O", "P", "Q"]);
       let pair = new Pair(card1, card2);
       assert.ok(pair.isValid());
     });
