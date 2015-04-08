@@ -3,7 +3,7 @@ let Card = require("../lib/Card");
 let Pair = require("../lib/Pair");
 let Deck = require("../lib/Deck");
 let deckGenerator = require("../lib/deckGenerator");
-let debug = require('debug')('deckGenerator');
+let debug = require('debug')('deckGeneratorTest');
 
 
 describe('deckGenerator()', () => {
